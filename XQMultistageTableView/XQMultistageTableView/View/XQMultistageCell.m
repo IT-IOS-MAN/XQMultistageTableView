@@ -13,7 +13,6 @@ static CGFloat SUPER_PIDDING = 20;
 
 @interface XQMultistageCell ()
 
-
 @end
 
 @implementation XQMultistageCell
@@ -68,19 +67,13 @@ static CGFloat SUPER_PIDDING = 20;
         self.textLabel.text = node.title;
         
         
-        if ([self.delegate respondsToSelector:@selector(multistageCell:isSubShowImageForRowAtIndexPath:)]) {
+        if ([self.delegate respondsToSelector:@selector(multistageCell:forRowAtIndexPath:)]) {
+            self.imageView.image = [self.delegate multistageCell:self forRowAtIndexPath:_indexPath];
             
-            BOOL showImage = [self.delegate multistageCell:self isSubShowImageForRowAtIndexPath:_indexPath];
-            if (showImage) {
-                
-                if ([self.delegate respondsToSelector:@selector(multistageCell:forRowAtIndexPath:)]) {
-                    self.imageView.image = [self.delegate multistageCell:self forRowAtIndexPath:_indexPath];
-                    
-                }else if([self.delegate respondsToSelector:@selector(multistageCell:imageView:forRowAtIndexPath:)]){
-                    [self.delegate multistageCell:self imageView:self.imageView forRowAtIndexPath:_indexPath];
-                }
-
-            }
+        }else if([self.delegate respondsToSelector:@selector(multistageCell:imageView:forRowAtIndexPath:)]){
+            [self.delegate multistageCell:self imageView:self.imageView forRowAtIndexPath:_indexPath];
+        } else {
+            self.imageView.image = nil;
         }
     }
 }
@@ -108,16 +101,10 @@ static CGFloat SUPER_PIDDING = 20;
     
     // 调整imageView的frame
     if (self.node.contentType == XQNodeContentTypeSub) {
-        if ([self.delegate respondsToSelector:@selector(multistageCell:isSubShowImageForRowAtIndexPath:)]) {
-            BOOL showImage = [self.delegate multistageCell:self isSubShowImageForRowAtIndexPath:_indexPath];
-            imageViewWH = (showImage ? (self.contentView.xq_height * 0.7) : 0);
-        }else{
-            imageViewWH = 0;
-        }
-    }else if(self.node.contentType == XQNodeContentTypeSuper){
-        
+        imageViewWH = self.imageView.image ? (self.contentView.xq_height * 0.7) : 0;
+//    }else if(self.node.contentType == XQNodeContentTypeSuper){
+    } else {
         imageViewWH = self.imageView.xq_width;
-        
     }
     
     CGFloat imageViewX = self.node.depth * SUPER_PIDDING + (imageViewWH > 0 ? 10 : 0);

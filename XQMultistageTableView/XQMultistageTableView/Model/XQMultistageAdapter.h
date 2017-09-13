@@ -13,7 +13,9 @@
 
 @protocol XQMultistageAdapterDelegate <NSObject>
 
--(void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+@optional
+
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 // 是否关闭子节点(目前没有实现)
 -(BOOL)multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *) adapter;

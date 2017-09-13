@@ -21,6 +21,43 @@
 
 @implementation ViewController
 
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    _adapter = [[XQMultistageAdapter alloc] init];
+    _adapter.delegate = self;
+    _adapter.multistageData = self.data;
+    XQMultistageTableView * tableView = [[XQMultistageTableView alloc] initWithFrame:self.view.bounds];
+    tableView.dataSource = _adapter;
+    tableView.delegate = _adapter;
+    [self.view addSubview:tableView];
+}
+
+#pragma mark - XQMultistageCellDelegate
+
+-(CGFloat)multistageCellSuperPidding:(XQMultistageCell *)cell
+{
+    return 30;
+}
+
+//-(UIImage *)multistageCell:(XQMultistageCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return [UIImage imageNamed:@"profile_ic_male_normal"];
+//}
+
+-(void)multistageCell:(XQMultistageCell *)cell imageView:(UIImageView *)imageView forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row > 5) {
+        imageView.image = [UIImage imageNamed:@"profile_ic_male_normal"];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark - 懒加载
 -(NSMutableArray *)data
 {
@@ -109,46 +146,5 @@
     return _data;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    _adapter = [[XQMultistageAdapter alloc] init];
-    _adapter.delegate = self;
-    _adapter.multistageData = self.data;
-    XQMultistageTableView * tableView = [[XQMultistageTableView alloc] initWithFrame:self.view.bounds];
-    tableView.dataSource = _adapter;
-    tableView.delegate = _adapter;
-    [self.view addSubview:tableView];
-}
-
-#pragma mark - XQMultistageCellDelegate
-
--(CGFloat)multistageCellSuperPidding:(XQMultistageCell *)cell
-{
-    return 30;
-}
-
--(BOOL)multistageCell:(XQMultistageCell *)cell isSubShowImageForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row > 5) {
-        return YES;
-    }
-    return NO;
-}
-
-//-(UIImage *)multistageCell:(XQMultistageCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return [UIImage imageNamed:@"profile_ic_male_normal"];
-//}
-
--(void)multistageCell:(XQMultistageCell *)cell imageView:(UIImageView *)imageView forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    imageView.image = [UIImage imageNamed:@"profile_ic_male_normal"];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
