@@ -7,7 +7,6 @@
 //
 
 #import "XQMultistageCell.h"
-#import "UIView+XQFrame.h"
 
 static CGFloat SUPER_PIDDING = 20;
 
@@ -66,14 +65,10 @@ static CGFloat SUPER_PIDDING = 20;
         
         self.textLabel.text = node.title;
         
+        self.imageView.image = nil;
         
-        if ([self.delegate respondsToSelector:@selector(multistageCell:forRowAtIndexPath:)]) {
-            self.imageView.image = [self.delegate multistageCell:self forRowAtIndexPath:_indexPath];
-            
-        }else if([self.delegate respondsToSelector:@selector(multistageCell:imageView:forRowAtIndexPath:)]){
-            [self.delegate multistageCell:self imageView:self.imageView forRowAtIndexPath:_indexPath];
-        } else {
-            self.imageView.image = nil;
+        if([self.delegate respondsToSelector:@selector(multistageCell:imageView:forRowAtNode:)]){
+            [self.delegate multistageCell:self imageView:self.imageView forRowAtNode:_node];
         }
     }
 }
@@ -101,10 +96,10 @@ static CGFloat SUPER_PIDDING = 20;
     
     // 调整imageView的frame
     if (self.node.contentType == XQNodeContentTypeSub) {
-        imageViewWH = self.imageView.image ? (self.contentView.xq_height * 0.7) : 0;
+        imageViewWH = self.imageView.image ? (self.contentView.frame.size.height * 0.7) : 0;
 //    }else if(self.node.contentType == XQNodeContentTypeSuper){
     } else {
-        imageViewWH = self.imageView.xq_width;
+        imageViewWH = self.imageView.frame.size.width;
     }
     
     CGFloat imageViewX = self.node.depth * SUPER_PIDDING + (imageViewWH > 0 ? 10 : 0);
@@ -113,11 +108,13 @@ static CGFloat SUPER_PIDDING = 20;
         imageViewX = self.node.depth * [self.delegate multistageCellSuperPidding:self] + (imageViewWH > 0 ? 10 : 0);
     }
     
-    self.imageView.frame = CGRectMake(imageViewX, (self.contentView.xq_height - imageViewWH) * 0.5, imageViewWH, imageViewWH);
+    self.imageView.frame = CGRectMake(imageViewX, (self.contentView.frame.size.height - imageViewWH) * 0.5, imageViewWH, imageViewWH);
     self.imageView.layer.cornerRadius = imageViewWH / 2;
     
     // 调整textLabel的frame
-    self.textLabel.xq_x = CGRectGetMaxX(self.imageView.frame) + 10;
+    CGRect textLabelF = self.textLabel.frame;
+    textLabelF.origin.x = CGRectGetMaxX(self.imageView.frame) + 10;
+    self.textLabel.frame = textLabelF;
     
     // 调整分割线的frame
     UIEdgeInsets newSeparatorInset = self.separatorInset;

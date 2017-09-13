@@ -8,9 +8,6 @@
 
 #import "XQMultistageAdapter.h"
 
-#import "XQMultistageTableView.h"
-#import "UIView+XQFrame.h"
-
 @interface XQMultistageAdapter () 
 
 
@@ -86,16 +83,16 @@
             XQMultistageCell *cell = (XQMultistageCell *)[tableView cellForRowAtIndexPath:indexPath];
             
             
-            if (cell.xq_y - tableView.contentOffset.y + tableView.separatorInset.top > tableView.xq_height * 0.6) {
+            if (cell.frame.origin.y - tableView.contentOffset.y + tableView.separatorInset.top > tableView.frame.size.height * 0.6) {
                 
                 
                 
-                if (cell.xq_y - tableView.xq_height * 0.5 <  tableView.contentSize.height - cell.xq_y) {
+                if (cell.frame.origin.y - tableView.frame.size.height * 0.5 <  tableView.contentSize.height - cell.frame.origin.y) {
                     
-                    if(tableView.tableHeaderView.xq_height + self.multistageData.count * tableView.rowHeight > tableView.xq_height){
+                    if(tableView.tableHeaderView.frame.size.height + self.multistageData.count * tableView.rowHeight > tableView.frame.size.height){
                         [UIView animateWithDuration:0.5 animations:^{
                             
-                            tableView.contentOffset = CGPointMake(0, cell.xq_y - tableView.xq_height * 0.5);
+                            tableView.contentOffset = CGPointMake(0, cell.frame.origin.y - tableView.frame.size.height * 0.5);
                             
                         }];
                     }

@@ -15,10 +15,8 @@
 		072716FB1E45B64400E9F7E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072716F91E45B64400E9F7E9 /* LaunchScreen.xib */; };
 		072717071E45B64400E9F7E9 /* XQMultistageTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717061E45B64400E9F7E9 /* XQMultistageTableViewTests.m */; };
 		072717181E45B7A000E9F7E9 /* XQNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717171E45B7A000E9F7E9 /* XQNode.m */; };
-		0727171C1E45B93400E9F7E9 /* XQMultistageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727171B1E45B93400E9F7E9 /* XQMultistageTableView.m */; };
 		0727171F1E45B95C00E9F7E9 /* XQMultistageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727171E1E45B95C00E9F7E9 /* XQMultistageCell.m */; };
 		072717221E45BC3300E9F7E9 /* XQMultistageAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717211E45BC3300E9F7E9 /* XQMultistageAdapter.m */; };
-		072717261E45C2E100E9F7E9 /* UIView+XQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717251E45C2E100E9F7E9 /* UIView+XQFrame.m */; };
 		072717291E45CAFF00E9F7E9 /* ic_triangle_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */; };
 		0727172A1E45CAFF00E9F7E9 /* ic_triangle_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */; };
 /* End PBXBuildFile section */
@@ -49,14 +47,10 @@
 		072717061E45B64400E9F7E9 /* XQMultistageTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQMultistageTableViewTests.m; sourceTree = "<group>"; };
 		072717161E45B7A000E9F7E9 /* XQNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQNode.h; sourceTree = "<group>"; };
 		072717171E45B7A000E9F7E9 /* XQNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQNode.m; sourceTree = "<group>"; };
-		0727171A1E45B93400E9F7E9 /* XQMultistageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQMultistageTableView.h; sourceTree = "<group>"; };
-		0727171B1E45B93400E9F7E9 /* XQMultistageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQMultistageTableView.m; sourceTree = "<group>"; };
 		0727171D1E45B95C00E9F7E9 /* XQMultistageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQMultistageCell.h; sourceTree = "<group>"; };
 		0727171E1E45B95C00E9F7E9 /* XQMultistageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQMultistageCell.m; sourceTree = "<group>"; };
 		072717201E45BC3300E9F7E9 /* XQMultistageAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQMultistageAdapter.h; sourceTree = "<group>"; };
 		072717211E45BC3300E9F7E9 /* XQMultistageAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQMultistageAdapter.m; sourceTree = "<group>"; };
-		072717241E45C2E100E9F7E9 /* UIView+XQFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQFrame.h"; sourceTree = "<group>"; };
-		072717251E45C2E100E9F7E9 /* UIView+XQFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQFrame.m"; sourceTree = "<group>"; };
 		072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_triangle_right@2x.png"; sourceTree = "<group>"; };
 		072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_triangle_right@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +138,6 @@
 			children = (
 				072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */,
 				072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */,
-				072717231E45C2B300E9F7E9 /* Extension */,
 				072717191E45B93400E9F7E9 /* View */,
 				072717141E45B72500E9F7E9 /* Model */,
 			);
@@ -165,21 +158,10 @@
 		072717191E45B93400E9F7E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0727171A1E45B93400E9F7E9 /* XQMultistageTableView.h */,
-				0727171B1E45B93400E9F7E9 /* XQMultistageTableView.m */,
 				0727171D1E45B95C00E9F7E9 /* XQMultistageCell.h */,
 				0727171E1E45B95C00E9F7E9 /* XQMultistageCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		072717231E45C2B300E9F7E9 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				072717241E45C2E100E9F7E9 /* UIView+XQFrame.h */,
-				072717251E45C2E100E9F7E9 /* UIView+XQFrame.m */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,10 +269,8 @@
 				072716F31E45B64400E9F7E9 /* ViewController.m in Sources */,
 				0727171F1E45B95C00E9F7E9 /* XQMultistageCell.m in Sources */,
 				072716F01E45B64400E9F7E9 /* AppDelegate.m in Sources */,
-				072717261E45C2E100E9F7E9 /* UIView+XQFrame.m in Sources */,
 				072716ED1E45B64400E9F7E9 /* main.m in Sources */,
 				072717181E45B7A000E9F7E9 /* XQNode.m in Sources */,
-				0727171C1E45B93400E9F7E9 /* XQMultistageTableView.m in Sources */,
 				072717221E45BC3300E9F7E9 /* XQMultistageAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +468,7 @@
 				0727170C1E45B64400E9F7E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0727170D1E45B64400E9F7E9 /* Build configuration list for PBXNativeTarget "XQMultistageTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +477,7 @@
 				0727170F1E45B64400E9F7E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

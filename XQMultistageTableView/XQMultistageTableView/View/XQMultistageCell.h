@@ -15,11 +15,8 @@
 
 @optional
 
-// 子 显示图片 优先级大于 (multistageCell:imageView:)
-- (UIImage *)multistageCell:(XQMultistageCell *) cell forRowAtIndexPath:(NSIndexPath *)indexPath;
-
 // 子 自己决定怎么显示图片
-- (void)multistageCell:(XQMultistageCell *) cell imageView:(UIImageView *) imageView forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)multistageCell:(XQMultistageCell *) cell imageView:(UIImageView *) imageView forRowAtNode:(XQNode *) node;
 
 // 子 自己决定与父标题间距
 - (CGFloat)multistageCellSuperPidding:(XQMultistageCell *) cell;

@@ -34,6 +34,9 @@ typedef enum{
 /// 内容类型
 @property (nonatomic , assign) XQNodeContentType contentType;
 
+/// 图片路径
+@property (nonatomic , copy) NSString *imagePath;
+
 #pragma Super
 /// 子节点列表
 @property (nonatomic, strong) NSMutableArray *subItems;

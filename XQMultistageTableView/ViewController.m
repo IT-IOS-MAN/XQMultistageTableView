@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "XQMultistageTableView.h"
 #import "XQMultistageAdapter.h"
 #import "XQNode.h"
 
@@ -28,7 +27,7 @@
     _adapter = [[XQMultistageAdapter alloc] init];
     _adapter.delegate = self;
     _adapter.multistageData = self.data;
-    XQMultistageTableView * tableView = [[XQMultistageTableView alloc] initWithFrame:self.view.bounds];
+    UITableView * tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = _adapter;
     tableView.delegate = _adapter;
     [self.view addSubview:tableView];
@@ -41,15 +40,10 @@
     return 30;
 }
 
-//-(UIImage *)multistageCell:(XQMultistageCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return [UIImage imageNamed:@"profile_ic_male_normal"];
-//}
-
--(void)multistageCell:(XQMultistageCell *)cell imageView:(UIImageView *)imageView forRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)multistageCell:(XQMultistageCell *)cell imageView:(UIImageView *)imageView forRowAtNode:(XQNode *)node
 {
-    if (indexPath.row > 5) {
-        imageView.image = [UIImage imageNamed:@"profile_ic_male_normal"];
+    if (node.imagePath.length) {
+        imageView.image = [UIImage imageNamed:node.imagePath];
     }
 }
 
@@ -111,6 +105,7 @@
         nodeSuper1_4_2_1.contentType = XQNodeContentTypeSub;
         nodeSuper1_4_2_1.depth = 3;
         nodeSuper1_4_2_1.title = @"nodeSuper1_4_2_1";
+        nodeSuper1_4_2_1.imagePath = @"profile_ic_male_normal";
         [nodeSuper1_4_2.subItems addObject:nodeSuper1_4_2_1];
         
         //--------2--------
