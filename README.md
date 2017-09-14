@@ -1,6 +1,6 @@
 # XQMultistageTableView
 
-多级菜单
+### 多级菜单
 
 意见反馈邮箱：917709989@qq.com
 
@@ -10,7 +10,7 @@ gif 图片加载中...
 
 ![gif](https://github.com/weakGG/XQMultistageTableView/blob/master/gif/image.gif)
 
-可以实现带头像带子节点，也可实现不带头像的子节点
+### 可以实现带头像带子节点，也可实现不带头像的子节点
 
 ## 通过 XQNode 设置对应的节点
 ```
@@ -67,7 +67,7 @@ tableView.delegate = _adapter;
 // 点击事件
 - (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;  
 ```
-##XQMultistageCellDelegate
+## XQMultistageCellDelegate
 ```
 // 子 自己决定怎么显示图片  
 - (void)multistageCell:(XQMultistageCell *) cell imageView:(UIImageView *) imageView forRowAtNode:(XQNode *) node;  
