@@ -15,8 +15,8 @@ gif 图片加载中...
 通过 XQNode 设置对应的节点
 
 typedef enum{  
-    XQNodeContentTypeSuper, <span style="color: rgb(36, 41, 46); font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace; white-space: pre;">// 父节点</span>  
-    XQNodeContentTypeSub,  <span style="color: rgb(36, 41, 46); font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace; white-space: pre;">// 子节点</span>  
+    XQNodeContentTypeSuper, // 父节点 
+    XQNodeContentTypeSub,  // 子节点  
 }XQNodeContentType;  
   
 @interface XQNode : NSObject  
