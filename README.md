@@ -13,7 +13,7 @@ gif 图片加载中...
 可以实现带头像带子节点，也可实现不带头像的子节点
 
 通过 XQNode 设置对应的节点
-'''
+```
 typedef enum{  
     XQNodeContentTypeSuper, // 父节点 
     XQNodeContentTypeSub,  // 子节点  
@@ -51,7 +51,7 @@ typedef enum{
 @property (nonatomic , assign) BOOL isExpand;  
   
 @end  
-'''
+```
 将创建好的数据源交给 XQMultistageAdapter 管理
 
 _adapter = [[XQMultistageAdapter alloc] init];  
