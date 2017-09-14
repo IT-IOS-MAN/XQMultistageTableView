@@ -1,6 +1,6 @@
 # XQMultistageTableView
 
-多级菜单
+##多级菜单
 
 意见反馈邮箱：917709989@qq.com
 
@@ -12,7 +12,7 @@ gif 图片加载中...
 
 可以实现带头像带子节点，也可实现不带头像的子节点
 
-通过 XQNode 设置对应的节点
+##通过 XQNode 设置对应的节点
 ```
 typedef enum{  
     XQNodeContentTypeSuper, // 父节点 
@@ -52,8 +52,8 @@ typedef enum{
   
 @end  
 ```
-将创建好的数据源交给 XQMultistageAdapter 管理
-
+##将创建好的数据源交给 XQMultistageAdapter 管理
+```
 _adapter = [[XQMultistageAdapter alloc] init];  
 _adapter.delegate = self;  
 _adapter.multistageData = self.data;  
@@ -61,22 +61,22 @@ UITableView * tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
 tableView.dataSource = _adapter;  
 tableView.delegate = _adapter;  
 [self.view addSubview:tableView];  
-
-XQMultistageAdapterDelegate
-
+```
+##XQMultistageAdapterDelegate
+```
 // 点击事件
 - (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;  
-
-XQMultistageCellDelegate
-
+```
+##XQMultistageCellDelegate
+```
 // 子 自己决定怎么显示图片  
 - (void)multistageCell:(XQMultistageCell *) cell imageView:(UIImageView *) imageView forRowAtNode:(XQNode *) node;  
   
 // 子 自己决定与父标题间距  
 - (CGFloat)multistageCellSuperPidding:(XQMultistageCell *) cell;  
-
-ViewController
-
+```
+##ViewController
+```
 @implementation ViewController  
   
   
@@ -105,3 +105,4 @@ ViewController
         imageView.image = [UIImage imageNamed:node.imagePath];  
     }  
 }  
+```
