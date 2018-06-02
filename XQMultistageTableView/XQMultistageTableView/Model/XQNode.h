@@ -13,6 +13,8 @@ typedef enum{
     XQNodeContentTypeSub,
 }XQNodeContentType;
 
+typedef void(^SelectedStateChangeBlock)(BOOL);
+
 @interface XQNode : NSObject
 
 #pragma 共同拥有
@@ -37,11 +39,21 @@ typedef enum{
 /// 图片路径
 @property (nonatomic , copy) NSString *imagePath;
 
+/// 是否可以选
+@property (nonatomic , assign) BOOL selectState;
+
+/// 当前是否需选择
+@property (nonatomic , assign) BOOL currentSelected;
+
+@property (nonatomic , strong) SelectedStateChangeBlock selectedStateChange;
+
 #pragma Super
 /// 子节点列表
 @property (nonatomic, strong) NSMutableArray *subItems;
 
 /// 该节点是否处于展开状态
 @property (nonatomic , assign) BOOL isExpand;
+
+
 
 @end

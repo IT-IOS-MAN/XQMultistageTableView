@@ -10,7 +10,7 @@
 #import "XQMultistageAdapter.h"
 #import "XQNode.h"
 
-@interface ViewController ()<XQMultistageCellDelegate, XQMultistageAdapterDelegate>
+@interface ViewController ()<XQMultistageAdapterDelegate>
 
 @property(nonatomic, strong) NSMutableArray *data;
 
@@ -25,12 +25,15 @@
     [super viewDidLoad];
     
     _adapter = [[XQMultistageAdapter alloc] init];
+    _adapter.radio = YES;
     _adapter.delegate = self;
     _adapter.multistageData = self.data;
     UITableView * tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = _adapter;
     tableView.delegate = _adapter;
     [self.view addSubview:tableView];
+    
+    
 }
 
 #pragma mark - XQMultistageCellDelegate
@@ -40,11 +43,28 @@
     return 30;
 }
 
--(void)multistageCell:(XQMultistageCell *)cell imageView:(UIImageView *)imageView forRowAtNode:(XQNode *)node
+- (BOOL)multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *)adapter
+{
+    return NO;
+}
+
+-(void)multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
 {
     if (node.imagePath.length) {
-        imageView.image = [UIImage imageNamed:node.imagePath];
+        cell.imageView.image = [UIImage imageNamed:node.imagePath];
     }
+}
+
+//- (UIImage *)multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    return [UIImage imageNamed:@"profile_ic_male_normal"];
+//}
+
+
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"node = %@", node.title);
 }
 
 - (void)didReceiveMemoryWarning {

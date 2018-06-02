@@ -17,8 +17,8 @@
 		072717181E45B7A000E9F7E9 /* XQNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717171E45B7A000E9F7E9 /* XQNode.m */; };
 		0727171F1E45B95C00E9F7E9 /* XQMultistageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727171E1E45B95C00E9F7E9 /* XQMultistageCell.m */; };
 		072717221E45BC3300E9F7E9 /* XQMultistageAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 072717211E45BC3300E9F7E9 /* XQMultistageAdapter.m */; };
-		072717291E45CAFF00E9F7E9 /* ic_triangle_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */; };
-		0727172A1E45CAFF00E9F7E9 /* ic_triangle_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */; };
+		DAF8E20A20C2F9C2008A55D2 /* XQMultistageTableView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAF8E20920C2F9C2008A55D2 /* XQMultistageTableView.bundle */; };
+		DAF8E20D20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E20C20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,9 @@
 		0727171E1E45B95C00E9F7E9 /* XQMultistageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQMultistageCell.m; sourceTree = "<group>"; };
 		072717201E45BC3300E9F7E9 /* XQMultistageAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQMultistageAdapter.h; sourceTree = "<group>"; };
 		072717211E45BC3300E9F7E9 /* XQMultistageAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQMultistageAdapter.m; sourceTree = "<group>"; };
-		072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_triangle_right@2x.png"; sourceTree = "<group>"; };
-		072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_triangle_right@3x.png"; sourceTree = "<group>"; };
+		DAF8E20920C2F9C2008A55D2 /* XQMultistageTableView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XQMultistageTableView.bundle; sourceTree = "<group>"; };
+		DAF8E20B20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+XQMultistageTableView.h"; sourceTree = "<group>"; };
+		DAF8E20C20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+XQMultistageTableView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +137,11 @@
 		072717101E45B66800E9F7E9 /* XQMultistageTableView */ = {
 			isa = PBXGroup;
 			children = (
-				072717271E45CAFF00E9F7E9 /* ic_triangle_right@2x.png */,
-				072717281E45CAFF00E9F7E9 /* ic_triangle_right@3x.png */,
+				DAF8E20920C2F9C2008A55D2 /* XQMultistageTableView.bundle */,
 				072717191E45B93400E9F7E9 /* View */,
 				072717141E45B72500E9F7E9 /* Model */,
+				DAF8E20B20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.h */,
+				DAF8E20C20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.m */,
 			);
 			path = XQMultistageTableView;
 			sourceTree = "<group>";
@@ -244,11 +246,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0727172A1E45CAFF00E9F7E9 /* ic_triangle_right@3x.png in Resources */,
 				072716F61E45B64400E9F7E9 /* Main.storyboard in Resources */,
 				072716FB1E45B64400E9F7E9 /* LaunchScreen.xib in Resources */,
 				072716F81E45B64400E9F7E9 /* Images.xcassets in Resources */,
-				072717291E45CAFF00E9F7E9 /* ic_triangle_right@2x.png in Resources */,
+				DAF8E20A20C2F9C2008A55D2 /* XQMultistageTableView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +270,7 @@
 				072716F31E45B64400E9F7E9 /* ViewController.m in Sources */,
 				0727171F1E45B95C00E9F7E9 /* XQMultistageCell.m in Sources */,
 				072716F01E45B64400E9F7E9 /* AppDelegate.m in Sources */,
+				DAF8E20D20C2FA10008A55D2 /* NSBundle+XQMultistageTableView.m in Sources */,
 				072716ED1E45B64400E9F7E9 /* main.m in Sources */,
 				072717181E45B7A000E9F7E9 /* XQNode.m in Sources */,
 				072717221E45BC3300E9F7E9 /* XQMultistageAdapter.m in Sources */,

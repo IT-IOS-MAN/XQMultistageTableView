@@ -19,4 +19,13 @@
     return _subItems;
 }
 
+- (void)setCurrentSelected:(BOOL)currentSelected
+{
+    _currentSelected = currentSelected;
+    
+    if (_selectedStateChange) {
+        _selectedStateChange(currentSelected);
+    }
+}
+
 @end
