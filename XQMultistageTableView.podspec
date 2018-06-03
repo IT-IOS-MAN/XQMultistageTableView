@@ -8,7 +8,7 @@ s.authors = { 'WeakGG' => '917709989@qq.com' }
 s.source = { :git => "https://github.com/weakGG/XQMultistageTableView.git", :tag => "0.0.1"}
 s.requires_arc = true
 s.ios.deployment_target = '8.0'
-s.source_files = "XQMultistageTableView/XQMultistageTableView/XQMultistageTableView/*.{h,m}", "XQMultistageTableView/XQMultistageTableView/XQMultistageTableView/Model/*.{h,m}", "XQMultistageTableView/XQMultistageTableView/XQMultistageTableView/View/*.{h,m}"
-s.resources = "XQMultistageTableView/XQMultistageTableView/XQMultistageTableView.bundle"
+s.source_files = "XQMultistageTableView/XQMultistageTableView/*.{h,m}", "XQMultistageTableView/XQMultistageTableView/**/*.{h,m}"
+s.resource = "XQMultistageTableView/XQMultistageTableView/XQMultistageTableView.bundle"
 s.frameworks = 'UIKit'
 end
