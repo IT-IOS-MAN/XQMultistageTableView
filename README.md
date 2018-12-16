@@ -103,4 +103,12 @@ tableView.delegate = _adapter;
 }  
 ```
 
+## Remind
+
+```
+ARC
+iOS>=6.0
+iPhone \ iPad screen anyway
+```
+
 XQKit 交流：546456937
