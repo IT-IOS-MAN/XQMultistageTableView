@@ -1,5 +1,6 @@
 # XQMultistageTableView
 
+
 ### 多级菜单
 
 gif 图片加载中...
@@ -7,6 +8,12 @@ gif 图片加载中...
 ![gif](https://github.com/weakGG/XQMultistageTableView/blob/master/gif/image.gif)
 
 ### 可以实现带头像带子节点，也可实现不带头像的子节点
+
+## CocoaPods
+
+```
+pod 'XQMultistageTableView', '~> 0.0.1'
+```
 
 ## 通过 XQNode 设置对应的节点
 ```
