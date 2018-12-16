@@ -133,4 +133,4 @@ iOS>=6.0
 iPhone \ iPad screen anyway
 ```
 
-XQKit 交流：546456937
+# XQKit 交流：546456937
