@@ -83,13 +83,13 @@ CGFloat const XQ_SUPER_PIDDING = 20;
     //如果是部门信息
     if (node.contentType == XQNodeContentTypeSuper) {
         
-        if ([_delegate respondsToSelector:@selector(multistageCellCustomSuperRotationImage:)]) {
-            self.imageView.image = [_delegate multistageCellCustomSuperRotationImage:self];
+        if ([_delegate respondsToSelector:@selector(xq_multistageCellCustomSuperRotationImage:)]) {
+            self.imageView.image = [_delegate xq_multistageCellCustomSuperRotationImage:self];
             _superRotationImage = YES;
         }
         
-        if (!self.imageView.image && [_delegate respondsToSelector:@selector(multistageCellCustomSuperUnRotationImage:)]) {
-            self.imageView.image =  [_delegate multistageCellCustomSuperUnRotationImage:self];
+        if (!self.imageView.image && [_delegate respondsToSelector:@selector(xq_multistageCellCustomSuperUnRotationImage:)]) {
+            self.imageView.image =  [_delegate xq_multistageCellCustomSuperUnRotationImage:self];
             _superRotationImage = NO;
         }
         
@@ -113,8 +113,8 @@ CGFloat const XQ_SUPER_PIDDING = 20;
         
         self.imageView.image = nil;
         
-        if([self.delegate respondsToSelector:@selector(multistageCell:forRowAtNode:)]){
-            [self.delegate multistageCell:self forRowAtNode:_node];
+        if([self.delegate respondsToSelector:@selector(xq_multistageCell:forRowAtNode:)]){
+            [self.delegate xq_multistageCell:self forRowAtNode:_node];
         }
     }
     
@@ -163,8 +163,8 @@ CGFloat const XQ_SUPER_PIDDING = 20;
     
     CGFloat imageViewX = self.node.depth * XQ_SUPER_PIDDING + (imageViewWH > 0 ? 10 : 0);
     
-    if ([self.delegate respondsToSelector:@selector(multistageCellSuperPidding:)]) {
-        imageViewX = self.node.depth * [self.delegate multistageCellSuperPidding:self] + (imageViewWH > 0 ? 10 : 0);
+    if ([self.delegate respondsToSelector:@selector(xq_multistageCellSuperPidding:)]) {
+        imageViewX = self.node.depth * [self.delegate xq_multistageCellSuperPidding:self] + (imageViewWH > 0 ? 10 : 0);
     }
     
     self.imageView.frame = CGRectMake(imageViewX, (cellH - imageViewWH) * 0.5, imageViewWH, imageViewWH);
@@ -207,8 +207,8 @@ CGFloat const XQ_SUPER_PIDDING = 20;
     _node.currentSelected = !_node.currentSelected;
     
     
-    if ([_delegate respondsToSelector:@selector(multistageCell:selected:)]) {
-        [_delegate multistageCell:self selected:_node.currentSelected];
+    if ([_delegate respondsToSelector:@selector(xq_multistageCell:selected:)]) {
+        [_delegate xq_multistageCell:self selected:_node.currentSelected];
     }
     
     
@@ -219,20 +219,20 @@ CGFloat const XQ_SUPER_PIDDING = 20;
 {
     _delegate = delegate;
     
-    if ([_delegate respondsToSelector:@selector(multistageCellShowStateNormalRightImage:)]) {
-        if ([_delegate multistageCellShowStateNormalRightImage:self]) {
-            if ([_delegate respondsToSelector:@selector(multistageCellStateNormalRightImage:)]) {
-                [_selectButton setImage:[_delegate multistageCellStateNormalRightImage:self] forState:UIControlStateNormal];
+    if ([_delegate respondsToSelector:@selector(xq_multistageCellShowStateNormalRightImage:)]) {
+        if ([_delegate xq_multistageCellShowStateNormalRightImage:self]) {
+            if ([_delegate respondsToSelector:@selector(xq_multistageCellStateNormalRightImage:)]) {
+                [_selectButton setImage:[_delegate xq_multistageCellStateNormalRightImage:self] forState:UIControlStateNormal];
             }
         } else {
             [_selectButton setImage:nil forState:UIControlStateNormal];
         }
     }
     
-    if ([_delegate respondsToSelector:@selector(multistageCellShowStateSelectedRightImage:)]) {
-        if ([_delegate multistageCellShowStateSelectedRightImage:self]) {
-            if ([_delegate respondsToSelector:@selector(multistageCellStateSelectedRight:)]) {
-                [_selectButton setImage:[_delegate multistageCellStateSelectedRight:self] forState:UIControlStateSelected];
+    if ([_delegate respondsToSelector:@selector(xq_multistageCellShowStateSelectedRightImage:)]) {
+        if ([_delegate xq_multistageCellShowStateSelectedRightImage:self]) {
+            if ([_delegate respondsToSelector:@selector(xq_multistageCellStateSelectedRight:)]) {
+                [_selectButton setImage:[_delegate xq_multistageCellStateSelectedRight:self] forState:UIControlStateSelected];
             }
         } else {
             [_selectButton setImage:nil forState:UIControlStateSelected];
