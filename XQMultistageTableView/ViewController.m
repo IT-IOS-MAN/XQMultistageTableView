@@ -38,31 +38,31 @@
 
 #pragma mark - XQMultistageCellDelegate
 
--(CGFloat)multistageCellSuperPidding:(XQMultistageCell *)cell
+-(CGFloat)xq_multistageCellSuperPidding:(XQMultistageCell *)cell
 {
     return 30;
 }
 
-- (BOOL)multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *)adapter
+- (BOOL)xq_multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *)adapter
 {
     return NO;
 }
 
--(void)multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
+-(void)xq_multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
 {
     if (node.imagePath.length) {
         cell.imageView.image = [UIImage imageNamed:node.imagePath];
     }
 }
 
-//- (UIImage *)multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
+//- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    
 //    return [UIImage imageNamed:@"profile_ic_male_normal"];
 //}
 
 
-- (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)xq_multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"node = %@", node.title);
 }
