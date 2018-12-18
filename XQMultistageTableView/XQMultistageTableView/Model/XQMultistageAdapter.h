@@ -16,40 +16,40 @@
 @optional
 
 // cell 点击事件
-- (void)xq_multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 // 是否关闭子节点
--(BOOL)xq_multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *) adapter;
+-(BOOL)multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *) adapter;
 
 // 父节点可不可以点击
--(BOOL)xq_multistageAdapterUnClickSuperNode:(XQMultistageAdapter *) adapter didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+-(BOOL)multistageAdapterUnClickSuperNode:(XQMultistageAdapter *) adapter didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 // 子节点自己显示图片
-- (void)xq_multistageAdapter:(XQMultistageAdapter *) adapter tableViewCell:(XQMultistageCell *) cell forRowAtNode:(XQNode *) node;
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter tableViewCell:(XQMultistageCell *) cell forRowAtNode:(XQNode *) node;
 
 // 子 自己决定与父标题间距
-- (CGFloat)xq_multistageAdapter:(XQMultistageAdapter *) adapter superPiddingAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)multistageAdapter:(XQMultistageAdapter *) adapter superPiddingAtIndexPath:(NSIndexPath *)indexPath;
 
 // 父标题可以旋转图片
-- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *) adapter customSuperRotationImageAtIndexPath:(NSIndexPath *)indexPath;
+- (UIImage *)multistageAdapter:(XQMultistageAdapter *) adapter customSuperRotationImageAtIndexPath:(NSIndexPath *)indexPath;
 
 // 父标题可以不可以旋转图片
-- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *) adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath;
+- (UIImage *)multistageAdapter:(XQMultistageAdapter *) adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath;
 
 // 打开选择 属性 选中状态变化
-- (void)xq_multistageAdapter:(XQMultistageAdapter *) adapter didSelectedAtIndexPath:(NSIndexPath *)indexPath selected:(BOOL) selected;
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter didSelectedAtIndexPath:(NSIndexPath *)indexPath selected:(BOOL) selected;
 
 // 打开选择 属性 选中状态图片
-- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *) adapter stateSelectedRightImageAtIndexPath:(NSIndexPath *)indexPath;
+- (UIImage *)multistageAdapter:(XQMultistageAdapter *) adapter stateSelectedRightImageAtIndexPath:(NSIndexPath *)indexPath;
 
 // 打开选择 属性 未选中状态图片
-- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *) adapter stateNormalRightImageAtIndexPath:(NSIndexPath *)indexPath;
+- (UIImage *)multistageAdapter:(XQMultistageAdapter *) adapter stateNormalRightImageAtIndexPath:(NSIndexPath *)indexPath;
 
 // 是否显示打开选择 属性 选中状态图片
-- (BOOL)xq_multistageAdapter:(XQMultistageAdapter *) adapter showStateSelectedRightImageAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)multistageAdapter:(XQMultistageAdapter *) adapter showStateSelectedRightImageAtIndexPath:(NSIndexPath *)indexPath;
 
 // 是否显示打开选择 属性 未选中状态图片
-- (BOOL)xq_multistageAdapter:(XQMultistageAdapter *) adapter showStateNormalRightImageAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)multistageAdapter:(XQMultistageAdapter *) adapter showStateNormalRightImageAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

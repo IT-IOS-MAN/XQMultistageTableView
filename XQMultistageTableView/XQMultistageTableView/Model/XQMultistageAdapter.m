@@ -49,21 +49,21 @@
     // 如果是人员就直接跳转到详细页面
     if (node.contentType == XQNodeContentTypeSub) {
         
-        if ([self.delegate respondsToSelector:@selector(xq_multistageAdapter:node:didSelectRowAtIndexPath:)]) {
-            [self.delegate xq_multistageAdapter:self node:node didSelectRowAtIndexPath:indexPath];
+        if ([self.delegate respondsToSelector:@selector(multistageAdapter:node:didSelectRowAtIndexPath:)]) {
+            [self.delegate multistageAdapter:self node:node didSelectRowAtIndexPath:indexPath];
         }
         
         return;
     } else if (node.contentType == XQNodeContentTypeSuper) {
-        if ([self.delegate respondsToSelector:@selector(xq_multistageAdapterUnClickSuperNode:didSelectRowAtIndexPath:)]) {
-            if ( [self.delegate xq_multistageAdapterUnClickSuperNode:self didSelectRowAtIndexPath:indexPath]) {
+        if ([self.delegate respondsToSelector:@selector(multistageAdapterUnClickSuperNode:didSelectRowAtIndexPath:)]) {
+            if ( [self.delegate multistageAdapterUnClickSuperNode:self didSelectRowAtIndexPath:indexPath]) {
                 return;
             }
         }
     }
     // 是否关闭子节点
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapterShouldCloseSubNode:)]) {
-        _closeSubNode = [_delegate xq_multistageAdapterShouldCloseSubNode:self];
+    if ([_delegate respondsToSelector:@selector(multistageAdapterShouldCloseSubNode:)]) {
+        _closeSubNode = [_delegate multistageAdapterShouldCloseSubNode:self];
     }
     
     // 如果是部门就展开 或 收起
@@ -93,41 +93,41 @@
 
 #pragma mark - XQMultistageCellDelegate
 // 子 自己决定怎么显示图片
-- (void)xq_multistageCell:(XQMultistageCell *) cell forRowAtNode:(XQNode *)node
+- (void)multistageCell:(XQMultistageCell *) cell forRowAtNode:(XQNode *)node
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:tableViewCell:forRowAtNode:)]) {
-        [_delegate xq_multistageAdapter:self tableViewCell:cell forRowAtNode:node];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:tableViewCell:forRowAtNode:)]) {
+        [_delegate multistageAdapter:self tableViewCell:cell forRowAtNode:node];
     }
 }
 
 // 子 自己决定与父标题间距
-- (CGFloat)xq_multistageCellSuperPidding:(XQMultistageCell *) cell
+- (CGFloat)multistageCellSuperPidding:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:superPiddingAtIndexPath:)]) {
-        [_delegate xq_multistageAdapter:self superPiddingAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:superPiddingAtIndexPath:)]) {
+        [_delegate multistageAdapter:self superPiddingAtIndexPath:cell.indexPath];
     }
     return XQ_SUPER_PIDDING;
 }
 
 // 父标题可以旋转图片
-- (UIImage *)xq_multistageCellCustomSuperRotationImage:(XQMultistageCell *) cell
+- (UIImage *)multistageCellCustomSuperRotationImage:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:customSuperRotationImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self customSuperRotationImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:customSuperRotationImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self customSuperRotationImageAtIndexPath:cell.indexPath];
     }
     return nil;
 }
 
 // 父标题可以不可以旋转图片
-- (UIImage *)xq_multistageCellCustomSuperUnRotationImage:(XQMultistageCell *) cell
+- (UIImage *)multistageCellCustomSuperUnRotationImage:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:customSuperUnRotationImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self customSuperUnRotationImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:customSuperUnRotationImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self customSuperUnRotationImageAtIndexPath:cell.indexPath];
     }
     return nil;
 }
 
-- (void)xq_multistageCell:(XQMultistageCell *) cell selected:(BOOL) selected
+- (void)multistageCell:(XQMultistageCell *) cell selected:(BOOL) selected
 {
     
     if (_radio) {
@@ -142,47 +142,47 @@
         }
     }
     
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:didSelectedAtIndexPath:selected:)]) {
-        [_delegate xq_multistageAdapter:self didSelectedAtIndexPath:cell.indexPath selected:selected];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:didSelectedAtIndexPath:selected:)]) {
+        [_delegate multistageAdapter:self didSelectedAtIndexPath:cell.indexPath selected:selected];
     }
     
 }
 
 // 打开选择 属性 选中状态图片
-- (UIImage *)xq_multistageCellStateSelectedRight:(XQMultistageCell *) cell
+- (UIImage *)multistageCellStateSelectedRight:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:stateSelectedRightImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self stateSelectedRightImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:stateSelectedRightImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self stateSelectedRightImageAtIndexPath:cell.indexPath];
     }
     
     return [NSBundle xq_checkedImage];
 }
 
 // 打开选择 属性 未选中状态图片
-- (UIImage *)xq_multistageCellStateNormalRightImage:(XQMultistageCell *) cell
+- (UIImage *)multistageCellStateNormalRightImage:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:stateNormalRightImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self stateNormalRightImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:stateNormalRightImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self stateNormalRightImageAtIndexPath:cell.indexPath];
     }
     
     return [NSBundle xq_checkImage];
 }
 
 // 是否显示打开选择 属性 选中状态图片
-- (BOOL)xq_multistageCellShowStateSelectedRightImage:(XQMultistageCell *) cell
+- (BOOL)multistageCellShowStateSelectedRightImage:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:showStateSelectedRightImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self showStateSelectedRightImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:showStateSelectedRightImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self showStateSelectedRightImageAtIndexPath:cell.indexPath];
     }
     
     return YES;
 }
 
 // 是否显示打开选择 属性 未选中状态图片
-- (BOOL)xq_multistageCellShowStateNormalRightImage:(XQMultistageCell *) cell
+- (BOOL)multistageCellShowStateNormalRightImage:(XQMultistageCell *) cell
 {
-    if ([_delegate respondsToSelector:@selector(xq_multistageAdapter:showStateNormalRightImageAtIndexPath:)]) {
-        return [_delegate xq_multistageAdapter:self showStateNormalRightImageAtIndexPath:cell.indexPath];
+    if ([_delegate respondsToSelector:@selector(multistageAdapter:showStateNormalRightImageAtIndexPath:)]) {
+        return [_delegate multistageAdapter:self showStateNormalRightImageAtIndexPath:cell.indexPath];
     }
     
     return YES;

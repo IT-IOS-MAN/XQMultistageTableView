@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     _adapter = [[XQMultistageAdapter alloc] init];
-    _adapter.radio = NO;
+    _adapter.radio = YES;
     _adapter.delegate = self;
     _adapter.multistageData = self.data;
     UITableView * tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -38,31 +38,31 @@
 
 #pragma mark - XQMultistageCellDelegate
 
--(CGFloat)xq_multistageCellSuperPidding:(XQMultistageCell *)cell
+-(CGFloat)multistageCellSuperPidding:(XQMultistageCell *)cell
 {
     return 30;
 }
 
-- (BOOL)xq_multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *)adapter
+- (BOOL)multistageAdapterShouldCloseSubNode:(XQMultistageAdapter *)adapter
 {
     return NO;
 }
 
--(void)xq_multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
+-(void)multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
 {
     if (node.imagePath.length) {
         cell.imageView.image = [UIImage imageNamed:node.imagePath];
     }
 }
 
-//- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
+//- (UIImage *)multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    
 //    return [UIImage imageNamed:@"profile_ic_male_normal"];
 //}
 
 
-- (void)xq_multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)multistageAdapter:(XQMultistageAdapter *) adapter node:(XQNode *) node didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"node = %@", node.title);
 }
@@ -88,21 +88,18 @@
         XQNode *nodesub1_1 = [[XQNode alloc] init];
         nodesub1_1.contentType = XQNodeContentTypeSub;
         nodesub1_1.depth = 1;
-        nodesub1_1.selectState = YES;
         nodesub1_1.title = @"nodesub1_1";
         [nodeSuper1.subItems addObject:nodesub1_1];
         
         XQNode *nodesub1_2 = [[XQNode alloc] init];
         nodesub1_2.contentType = XQNodeContentTypeSub;
         nodesub1_2.depth = 1;
-        nodesub1_2.selectState = YES;
         nodesub1_2.title = @"nodesub1_2";
         [nodeSuper1.subItems addObject:nodesub1_2];
         
         XQNode *nodesub1_3 = [[XQNode alloc] init];
         nodesub1_3.contentType = XQNodeContentTypeSub;
         nodesub1_3.depth = 1;
-        nodesub1_3.selectState = YES;
         nodesub1_3.title = @"nodesub1_3";
         [nodeSuper1.subItems addObject:nodesub1_3];
         
@@ -114,7 +111,6 @@
         
         XQNode *nodeSuper1_4_1 = [[XQNode alloc] init];
         nodeSuper1_4_1.contentType = XQNodeContentTypeSub;
-        nodeSuper1_4_1.selectState = YES;
         nodeSuper1_4_1.depth = 2;
         nodeSuper1_4_1.title = @"nodeSuper1_4_1";
         [nodeSuper1_4.subItems addObject:nodeSuper1_4_1];
