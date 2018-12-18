@@ -17,7 +17,7 @@ gif 图片加载中...
 ## CocoaPods
 
 ```
-pod 'XQMultistageTableView', '~> 0.0.1'
+pod 'XQMultistageTableView', '~> 1.0.0'
 ```
 
 ## 通过 XQNode 设置对应的节点
