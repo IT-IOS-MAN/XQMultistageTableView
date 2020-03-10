@@ -22,10 +22,10 @@ typedef void(^SelectedStateChangeBlock)(BOOL);
 @property(nonatomic, copy) NSString *title;
 
 /// 父节点的id，如果为-1表示该节点为根节点
-@property (nonatomic , retain) NSString *parentId;
+@property (nonatomic , retain) NSString *parentCode;
 
 /// 本节点的id
-@property (nonatomic , retain) NSString *nodeId;
+@property (nonatomic , retain) NSString *nodeCode;
 
 /// 该节点的深度
 @property (nonatomic , assign) NSInteger depth;
