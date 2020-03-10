@@ -22,22 +22,16 @@ typedef void(^SelectedStateChangeBlock)(BOOL);
 @property(nonatomic, copy) NSString *title;
 
 /// 父节点的id，如果为-1表示该节点为根节点
-@property (nonatomic , retain) NSNumber *parentId;
+@property (nonatomic , retain) NSString *parentId;
 
 /// 本节点的id
-@property (nonatomic , retain) NSNumber *nodeId;
+@property (nonatomic , retain) NSString *nodeId;
 
 /// 该节点的深度
-@property (nonatomic , assign) int depth;
-
-/// 使用者id
-@property (nonatomic , retain) NSNumber *userId;
+@property (nonatomic , assign) NSInteger depth;
 
 /// 内容类型
 @property (nonatomic , assign) XQNodeContentType contentType;
-
-/// 图片路径
-@property (nonatomic , copy) NSString *imagePath;
 
 /// 是否可以选
 @property (nonatomic , assign) BOOL selectState;

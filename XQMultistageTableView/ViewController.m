@@ -50,9 +50,9 @@
 
 -(void)xq_multistageAdapter:(XQMultistageAdapter *)adapter tableViewCell:(XQMultistageCell *)cell forRowAtNode:(XQNode *)node
 {
-    if (node.imagePath.length) {
-        cell.imageView.image = [UIImage imageNamed:node.imagePath];
-    }
+//    if (node.imagePath.length) {
+//        cell.imageView.image = [UIImage imageNamed:node.imagePath];
+//    }
 }
 
 //- (UIImage *)xq_multistageAdapter:(XQMultistageAdapter *)adapter customSuperUnRotationImageAtIndexPath:(NSIndexPath *)indexPath
@@ -125,7 +125,7 @@
         nodeSuper1_4_2_1.contentType = XQNodeContentTypeSub;
         nodeSuper1_4_2_1.depth = 3;
         nodeSuper1_4_2_1.title = @"nodeSuper1_4_2_1";
-        nodeSuper1_4_2_1.imagePath = @"profile_ic_male_normal";
+//        nodeSuper1_4_2_1.imagePath = @"profile_ic_male_normal";
         [nodeSuper1_4_2.subItems addObject:nodeSuper1_4_2_1];
         
         //--------2--------
