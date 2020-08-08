@@ -20,6 +20,10 @@ gif 图片加载中...
 pod 'XQMultistageTableView', '~> 1.0.6'
 ```
 
+```
+#import "XQMultistage.h"
+```
+
 ## XQMultistage 提供三种Cell样式
 
 ### 1、Base 基础
