@@ -1,14 +1,14 @@
 //
-//  XQNode.m
+//  XQMultistageNode.m
 //  XQMultistageTableView
 //
 //  Created by MacG on 17/2/4.
 //  Copyright (c) 2017年 IT_XQ. All rights reserved.
 //
 
-#import "XQNode.h"
+#import "XQMultistageNode.h"
 
-@implementation XQNode
+@implementation XQMultistageNode
 
 -(NSMutableArray *)subItems
 {

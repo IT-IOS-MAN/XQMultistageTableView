@@ -1,5 +1,5 @@
 //
-//  XQNode.h
+//  XQMultistageNode.h
 //  XQMultistageTableView
 //
 //  Created by MacG on 17/2/4.
@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 typedef enum{
-    XQNodeContentTypeSuper,
-    XQNodeContentTypeSub,
+    XQNodeContentTypeSuper, // 父节点
+    XQNodeContentTypeSub, // 子节点
 }XQNodeContentType;
 
 typedef void(^SelectedStateChangeBlock)(BOOL);
 
-@interface XQNode : NSObject
+@interface XQMultistageNode : NSObject
 
 #pragma 共同拥有
 /// 节点名称
@@ -51,3 +51,4 @@ typedef void(^SelectedStateChangeBlock)(BOOL);
 
 
 @end
+
